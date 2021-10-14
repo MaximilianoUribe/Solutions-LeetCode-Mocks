@@ -1,3 +1,10 @@
+/*
+Given an integer x, return true if x is palindrome integer.
+
+An integer is a palindrome when it reads the same backward as
+ forward. For example, 121 is palindrome while 123 is not.
+*/
+
 class Problem9 {
 	public boolean isPalindrome(int x) {
 		//if the integer is negative we know that is not a 
