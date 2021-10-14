@@ -1,41 +1,49 @@
-/*Given an array of integers nums and an integer target, 
-return indices of the two numbers such that they add up to target.
-
-You may assume that each input would have exactly one solution, 
-and you may not use the same element twice.
-
-You can return the answer in any order.
-*/
 
 
 class Problem13 {
-	public int[] twoSum(int[] nums, int target) {
-		//creating the array for the result
-        int[] result = new int[2];
-        //creating a hashmap to look for the value 
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        //using a loop to map the values and also check if the
-        //result is already inside
-        for (int i = 0; i < nums.length; i++) {
-        	//first cheking if we already have the result
-        	//since there is only two numbers that can sum up to
-        	//the result we can assume that substracting the target
-        	//from the number at i, if the result is on the map,
-        	//we have our two numbers (nums[i], target-nums[i])
-            if (map.containsKey(target - nums[i])) {
-                result[1] = i;
-                result[0] = map.get(target - nums[i]);
-                return result;
-            }
-            //mapping the elements if the condition is not met
-            //we put the number in the key and the index in the value
-            //since we want to return the index not the values
-            map.put(nums[i], i);
+	public int romanToInt(String s) {
+        int[] romanNums = new int[s.length()];
+        for(int i = 0; i<s.length(); i++) {
+            switch(s.charAt(i)){
+                case 'I':
+                    romanNums[i] = 1;
+                    break;
+                case 'V':
+                    romanNums[i] = 5;
+                    break;
+                case 'X':
+                    romanNums[i] = 10;
+                    break;
+                case 'L':
+                    romanNums[i] = 50;
+                    break;
+                case 'C':
+                    romanNums[i] = 100;
+                    break;
+                case 'D':
+                    romanNums[i] = 500;
+                    break;
+                case 'M':
+                    romanNums[i] = 1000;
+                    break;
+            } 
         }
-        //return the array already filled
-        return result;
+        int sumOfRoman = 0;
+        for(int j = romanNums.length-1; j>=0;j--) {
+            if(j == 0){
+                sumOfRoman = sumOfRoman + romanNums[j];
+                break;
+            } 
+                
+            if(romanNums[j]>romanNums[j-1]){
+                sumOfRoman = sumOfRoman + (romanNums[j] - romanNums[j-1]);
+                j--;
+            }else{
+                sumOfRoman = sumOfRoman + romanNums[j];
+            }
+            
+        }
+        return sumOfRoman;
     }
-    //since this solution only runs the length of nums once in the
-    //worst case its complexity would be O(n)
     
 }
