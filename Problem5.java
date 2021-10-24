@@ -26,7 +26,7 @@ class Problem5 {
             	result = even;
 
             //cheking the odd cases
-            String odd = checkFromIndex(s,i,i+1);
+            String odd = checkFromIndex(s,i,i+1); 
 
             //checking if the string is greater than what we 
             //alredy have
