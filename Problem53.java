@@ -61,12 +61,10 @@ class Problem53 {
 	algorithm is specifically used for getting the max sum of a
 	subarray in an array
 
-	-for this we need to declare a sum and a current value
-	-then we iterate through the array starting from 1
-	-then we check wath is greater; the currSum or the number at pos
-	-depending on which is greater we check if that number is greater
-	than the sum we already have and then change the value of the sum
-
+	how I understand this algorithm is that we want to work with 
+	what we have, we start from index 0 and we want to check which
+	is greater first the sum we already have or the sum we have plus 
+	the next number
 	*/
 	public int kadanesAlgorithm(int[] nums) {
 		//edge case
