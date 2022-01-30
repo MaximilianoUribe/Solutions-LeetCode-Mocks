@@ -29,3 +29,4 @@ class Problem198 {
         return money[money.length-1];
     }
 }
+
